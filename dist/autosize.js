@@ -1,5 +1,5 @@
 /*!
-	Autosize 4.0.0
+	Autosize 4.0.1
 	license: MIT
 	http://www.jacklmoore.com/autosize
 */
@@ -60,7 +60,7 @@
 	}
 
 	function assign(ta) {
-		if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
+		if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' && !ta.hasAttribute('contenteditable') || map.has(ta)) return;
 
 		var heightOffset = null;
 		var clientWidth = ta.clientWidth;

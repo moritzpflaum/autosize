@@ -38,7 +38,7 @@ try {
 }
 
 function assign(ta) {
-	if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
+	if (!ta || !ta.nodeName || (ta.nodeName !== 'TEXTAREA' && !ta.hasAttribute('contenteditable')) || map.has(ta)) return;
 
 	let heightOffset = null;
 	let clientWidth = ta.clientWidth;
